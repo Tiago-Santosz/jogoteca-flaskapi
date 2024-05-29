@@ -1,0 +1,26 @@
+# Ignorar a pasta do ambiente virtual
+venv/
+
+# Ignorar todos os arquivos .pyc que são gerados quando o Python compila o código
+*.pyc
+
+# Ignorar a pasta __pycache__ que é gerada pelo Python
+__pycache__/
+
+# Ignorar a pasta .pytest_cache que é gerada quando você executa testes com pytest
+.pytest_cache/
+
+# Ignorar a pasta .vscode se você estiver usando o Visual Studio Code
+.vscode/
+
+# Ignorar todos os arquivos .log
+*.log
+
+# Ignorar a pasta instance que geralmente contém configurações específicas da instância
+instance/
+
+# Ignorar o arquivo .flaskenv que pode conter variáveis de ambiente
+.flaskenv
+
+# Ignorar o arquivo .env que pode conter variáveis de ambiente
+.env
