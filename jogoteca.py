@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session, flash
 from models.jogo import Jogo
 
 jogo1 = Jogo('Batman Knight', 'Aventura', 'PS4/PC')
@@ -10,6 +10,7 @@ game_list = [jogo1, jogo2, jogo3, jogo4]
 
 
 app = Flask(__name__)
+app.secret_key = 'jogotecaalura'
 
 @app.route('/')
 def render_home():
@@ -35,8 +36,11 @@ def login():
 @app.route('/autenticar', methods=['POST',])
 def autenticar():
     if 'gamestart' == request.form['senha']:
+        session['usuario_logado'] = request.form['usuario']
+        flash(session['usuario_logado'] +' logado com sucesso!')
         return redirect('/')
     else:
+        flash('Senha ou usuário inválidos!')
         return redirect('/login')
 
 
