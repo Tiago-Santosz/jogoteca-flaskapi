@@ -1,2 +1,2 @@
 # jogoteca-flaskapi
-Primeiro projeto python com Flask microframeworla
+Primeiro projeto python com Flask microframework
