@@ -28,4 +28,16 @@ def create_game():
     game_list.append(new_game)
     return redirect('/')
 
+@app.route('/login')
+def login():
+    return render_template('login.html', title='Faça seu login')
+
+@app.route('/autenticar', methods=['POST',])
+def autenticar():
+    if 'gamestart' == request.form['senha']:
+        return redirect('/')
+    else:
+        return redirect('/login')
+
+
 app.run(debug=True)
