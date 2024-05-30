@@ -10,7 +10,29 @@
 
 <body>
     <div class="container">
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %} 
+                    <ul id="messages" class="list-unstyled">
+                    {% for message in messages %}
+                        <li class="alert alert-success">{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}    
+
         <div class="page-header">
+            <nav>
+                <!-- Outros itens de navegação -->
+                <div class="ml-auto">
+                    {% if session['usuario_logado'] %}
+                        <span>Bem-vindo, {{ session['usuario_logado'] }}!</span>
+                        <a class="btn btn-primary btn-sm ml-2" href="{{ url_for('logout') }}">Logout</a>
+                    {% else %}
+                        <a class="btn btn-primary btn-sm ml-2" href="{{url_for('login')}}">Login</a>
+                    {% endif %}
+                </div>
+            </nav>
             <h1>{{title}}</h1>
         </div>
 

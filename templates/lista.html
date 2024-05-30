@@ -19,5 +19,7 @@
                 
             </tbody>
         </table>
-        
+        {% if session['usuario_logado'] %}
+        <a class="btn btn-primary btn-sm ml-2" href="{{ url_for('new_game') }}">Adicionar novo jogo</a>
+    {% endif %}
 {% endblock %}
